@@ -1,0 +1,116 @@
+.mat-header-cell {
+  color: #ffffff;
+  font-weight: bold;
+  text-align: right;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mat-cell {
+  color: white;
+  text-align: center;
+  justify-content:center;
+  /* row border */
+  border-bottom: 1px solid #ffbdf8;
+  border-top: 1px solid #ffbdf8;
+}
+
+table {
+  width: 100%;
+}
+
+.w-75 {
+  max-width: 145px;
+  text-align: center;
+}
+
+
+
+::ng-deep .mat-form-field-label{
+  color: #ffffff !important;
+}
+::ng-deep .mat-form-field .mat-input-element {
+  color: #ffffff;
+}
+
+::ng-deep .mat-form-field .mat-form-field-underline {
+  background-color: #ffffff;
+}
+::ng-deep .mat-form-field .mat-form-field-ripple {
+  background-color: #ffffff;
+}
+.mat-table {
+  overflow: auto;
+  max-height: 700px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 700px;
+}
+
+
+.mat-header-cell .mat-sort-header-sorted {
+  color: #0A0A0A;
+}
+
+
+.mat-row:nth-child(even){
+  background-color: #323030;
+}
+
+.mat-row:nth-child(odd){
+  background-color: #323030;
+}
+
+$mat-row-height: 50px;
+$mat-row-horizontal-padding: 0px;
+.mat-row, .mat-header-row {
+  display: flex;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  align-items: center;
+  min-height: $mat-row-height;
+  padding: 0 $mat-row-horizontal-padding;
+}
+
+.mat-cell, .mat-header-cell {
+  flex: 1;
+  overflow: hidden;
+  word-wrap: break-word;
+  background-color: #323030;
+}
+
+.mat-paginator {
+  font-size: 12px;
+  color: #ffffff;
+  background-color:  #323030;
+}
+.mat-paginator-navigation-previous {
+  color: white;
+}
+
+.mat-paginator-navigation-next {
+  color: #ffffff;
+
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+::ng-deep .mat-select-value {
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+.mat-paginator .mat-select-arrow {
+  border: 5px solid transparent !important;
+  color: white;
+}
+::ng-deep .mat-option-text {
+  text-align: center;
+}
+ .mat-sort-header-arrow {
+  color: #ffffff;
+}

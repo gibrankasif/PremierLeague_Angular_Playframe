@@ -1,0 +1,52 @@
+
+<div fxLayout>
+  <div fxFlex="80%">
+    <h2 style="color: white">PREMIER LEAGUE MATCHES</h2>
+  </div>
+  <div fxLayoutAlign="right center">
+    <mat-form-field fxFlex="100%"  floatLabel="never">
+     <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Search Date">
+    </mat-form-field>
+  </div>
+    <div id="btn-container" fxFlex="0%" fxLayoutAlign="end center">
+     <a mat-raised-button color="primary" (click)="openDialog()">RANDOM MATCH</a>
+    </div>
+  </div>
+
+<mat-table [dataSource]="matchDataSource" matSort class="mat-elevation-z8">
+  <!-- Football Club Name Column -->
+  <ng-container matColumnDef="matchDate">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>DATE</mat-header-cell>
+    <mat-cell *matCellDef="let row" class="header-align-right"> {{row.matchDate}} </mat-cell>
+  </ng-container>
+
+  <!-- Played Matches Column -->
+  <ng-container matColumnDef="opponent01.clubName">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>OPPONENT01</mat-header-cell>
+    <mat-cell *matCellDef="let FootballMatch" id = "center-values"> {{FootballMatch.opponent01.clubName}} </mat-cell>
+  </ng-container>
+
+  <!-- Club Wins Column -->
+  <ng-container matColumnDef="opponent02.clubName">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>OPPONENT02</mat-header-cell>
+    <mat-cell *matCellDef="let FootballMatch"> {{FootballMatch.opponent02.clubName}} </mat-cell>
+  </ng-container>
+
+  <!-- Club Draws Column -->
+  <ng-container matColumnDef="matchScoreOpponent01">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>SCORE01</mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.matchScoreOpponent01}} </mat-cell>
+  </ng-container>
+
+  <!-- Club Losses Column -->
+  <ng-container matColumnDef="matchScoreOpponent02">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>SCORE02</mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.matchScoreOpponent02}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="matchTableColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: matchTableColumns;">
+  </mat-row>
+</mat-table>
+<mat-paginator [pageSizeOptions]="[10, 20, 380]" showFirstLastButtons></mat-paginator>
+

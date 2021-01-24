@@ -1,0 +1,17 @@
+  
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Serve index page from public directory
+GET         /                    controllers.LeagueController.premierLeagueSummary()
+
+# An example route (Prefix all API routes with apiPrefix defined in application.conf)
+GET         /api/league         controllers.LeagueController.listPremierLeague()
+
+GET         /api/matches        controllers.LeagueController.listPremierMatches()
+
+GET         /api/randomMatch        controllers.LeagueController.generateRandomMatch()
+
+
+

@@ -1,0 +1,75 @@
+<div fxLayout fxLayoutAlign="left center">
+  <h2 style="color: white">PREMIER LEAGUE TABLE</h2>
+</div>
+
+<!--<div class="example-container mat-elevation-z8" >-->
+  <mat-table [dataSource]="leagueDataSource" matSort class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="rank">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>POSITION</mat-header-cell>
+      <mat-cell *matCellDef="let element index as i;" [ngClass]="'w-75'"> {{ i + 1}} </mat-cell>
+    </ng-container>
+    <!-- Football Club Name Column -->
+    <ng-container matColumnDef="clubName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>CLUB NAME</mat-header-cell>
+      <mat-cell *matCellDef="let row" class="header-align-right"> {{row.clubName}} </mat-cell>
+    </ng-container>
+
+    <!-- Played Matches Column -->
+    <ng-container matColumnDef="numberOfMatchesPlayed">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>PLAYED</mat-header-cell>
+      <mat-cell *matCellDef="let row" id = "center-values"> {{row.numberOfMatchesPlayed}} </mat-cell>
+    </ng-container>
+
+    <!-- Club Wins Column -->
+    <ng-container matColumnDef="clubWins">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>WINS</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.clubWins}} </mat-cell>
+    </ng-container>
+
+    <!-- Club Draws Column -->
+    <ng-container matColumnDef="clubDraws">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>DRAWS</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.clubDraws}} </mat-cell>
+    </ng-container>
+
+    <!-- Club Losses Column -->
+    <ng-container matColumnDef="clubDefeats">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>DEFEATS</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.clubDefeats}} </mat-cell>
+    </ng-container>
+
+    <!-- GS Column -->
+    <ng-container matColumnDef="goalsScored">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>GS</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.goalsScored}} </mat-cell>
+    </ng-container>
+
+    <!-- GR Column -->
+    <ng-container matColumnDef="goalsReceived">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>GR</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.goalsReceived}} </mat-cell>
+    </ng-container>
+
+    <!-- GD Column -->
+    <ng-container matColumnDef="goalDifferenceClub">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>GD</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.goalDifferenceClub}} </mat-cell>
+    </ng-container>
+
+    <!-- POINTS Column -->
+    <ng-container matColumnDef="points">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>POINTS</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.points}} </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="leagueTableColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: leagueTableColumns;">
+    </mat-row>
+  </mat-table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+<!--  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>-->
+<!--</div>-->
+

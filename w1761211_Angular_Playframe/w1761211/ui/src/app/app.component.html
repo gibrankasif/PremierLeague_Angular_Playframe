@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span><img src="./assets/logo.png" id="logo"></span>
+    <span style="font-size: 30px">PREMIER LEAGUE</span>
+    <div>
+      <!-- The following buttons are links redirecting to the different components-->
+      <a mat-button routerLink="" routerLinkActive="active">  LEAGUE TABLE </a>
+      <a mat-button routerLink="/Match"  routerLinkActive="active">  LEAGUE MATCHES </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class = "page-container">
+  <div class="colored box" style="cursor: pointer; flex-direction: row; box-sizing: border-box; display: flex;">
+    <div style="flex: 1 1 100%; box-sizing: border-box; max-width: 10%;"></div>
+    <div fxflex="60" style="flex: 1 1 100%; box-sizing: border-box; max-width: 80%;">
+      <router-outlet></router-outlet>
+    </div>
+    <div fxflex style="flex: 1 1 0%; box-sizing: border-box;"></div>
+  </div>
+</div>
